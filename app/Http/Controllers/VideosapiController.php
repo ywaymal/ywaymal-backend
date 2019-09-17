@@ -17,7 +17,7 @@ class VideosapiController extends Controller
     //
     public function __construct()
     {
-        $this->middleware('auth:api',['except'=>['register']]);
+//        $this->middleware('auth:api',['except'=>['register']]);real
     }
     public function GetVideos(){
         $videos=Videos::orderBy('id','desc')->get();

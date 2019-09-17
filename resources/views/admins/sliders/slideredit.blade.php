@@ -39,12 +39,6 @@
                                             @endif
                                         </div>
                                     </div>
-
-
-
-
-
-
                                     <div class="item form-group">
                                         {!! Form::label('id-input-file-2','Link',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                         <span class="required">*</span>

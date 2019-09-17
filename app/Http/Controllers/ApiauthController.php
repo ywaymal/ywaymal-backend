@@ -15,7 +15,7 @@ class ApiauthController extends Controller
     //reg for viewers
     public function __construct()
     {
-//        $this->middleware('auth:api',['except'=>['register']]);
+//        $this->middleware('auth:api',['except'=>['register']]);real
     }
 
     public function register(Request $request)
@@ -93,7 +93,8 @@ class ApiauthController extends Controller
         if(Auth::guard('api')->user()){
             $statuse='yes';
         }else{
-            $statuse='no';
+//            $statuse='no';//real
+            $statuse='yes';
        }
         return response()->json($statuse);
     }

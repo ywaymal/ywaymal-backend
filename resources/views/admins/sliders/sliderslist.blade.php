@@ -42,8 +42,7 @@
                                         <tr>
                                             <th>id</th>
                                             <th>Upload By</th>
-                                            <th>Title</th>
-                                            <th> Link</th>
+                                            <th>Description</th>
                                             <th>Created At </th>
                                             <th> </th>
                                         </tr>
@@ -51,22 +50,20 @@
 
 
                                         <tbody>
-                                        @foreach($news as $n)
+                                        @foreach($sliders as $s)
                                             <tr>
-                                                <td>{{$n->id}}</td>
+                                                <td>{{$s->id}}</td>
                                                 <td>
                                                     <?php
-                                                    $upload_user=\Illuminate\Support\Facades\DB::table('users')->where('id',$n->uploader_id)->first()->name;
-
+                                                    $upload_user=\Illuminate\Support\Facades\DB::table('users')->where('id',$s->uploader_id)->first()->name;
                                                     ?>
                                                     {{$upload_user}}
                                                 </td>
-                                                <td>{{$n->title}}</td>
-                                                <td>{{$n->link}}</td>
-                                                <td>{{$n->created_at}}</td>
+                                                <td>{{$s->description}}</td>
+                                                <td>{{$s->created_at}}</td>
                                                 <td>
-                                                    <a href="{{url('admin/slideredit/'.$n->id)}}" class="btn btn-success btn-xs">Edit</a>
-                                                    <a href="{{url('admin/sliderdetail/'.$n->id)}}" type="button" class="btn btn-info btn-xs">Detail</a>
+                                                    <a href="{{url('admin/slideredit/'.$s->id)}}" class="btn btn-success btn-xs">Edit</a>
+                                                    <a href="{{url('admin/sliderdetail/'.$s->id)}}" type="button" class="btn btn-info btn-xs">Detail</a>
                                                 </td>
                                             </tr>
                                         @endforeach

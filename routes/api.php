@@ -21,6 +21,7 @@ Route::post('/viewer_register', 'ApiauthController@register');
 Route::post('/check_token', 'ApiauthController@check_token');
 Route::post('/getvideos', 'VideosapiController@GetVideos');
 Route::post('/getsliders', 'VideosapiController@GetSliders');
+Route::post('/like', 'socialapiController@like');
 Route::post('/getnews', 'VideosapiController@GetNews');
 Route::post('/getvideosbyid/{id}', 'VideosapiController@getvideosbyid');
 Route::post('/getnewsdetail/{id}', 'VideosapiController@getnewsdetail');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use App\Sliders;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,22 +23,22 @@ class SliderController extends Controller
     public function SliderDetail($id)
     {
         //detail page of video
-        $news = News::where('id', $id)->first();
-        return view('admins.sliders.sliderdetail', ['news' => $news]);
+        $slider = Sliders::where('id', $id)->first();
+        return view('admins.sliders.sliderdetail', ['slider' => $slider]);
     }
 
     public function SlidersList()
     {
         //showing video list page
-        $news = News::where('slider', 'yes')->orderBy('created_at', 'desc')->get();
-        return view('admins.sliders.sliderslist', ['news' => $news]);
+        $sliders = Sliders::orderBy('created_at', 'desc')->get();
+        return view('admins.sliders.sliderslist', ['sliders' => $sliders]);
     }
 
     public function SliderEdit($id)
     {
 
-        $news = News::where('id', $id)->first();
-        return view('admins.sliders.slideredit', ['news' => $news]);
+        $sliders = Sliders::where('id', $id)->first();
+        return view('admins.sliders.slideredit', ['sliders' => $sliders]);
     }
 
     public function SliderEditSave(Request $request, $id)
@@ -81,17 +82,20 @@ class SliderController extends Controller
     public function DeleteSlider(Request $request)
     {
         //delete data
-        $news = News::find($request->id);
+        $slider = Sliders::find($request->id);
 
-        $files = 'backend/admin/news/' . $news->file;
-        if (File::exists($files, $news->file)) {
-            //if file exists
-            File::delete($files, $news->file);
-            //delete this file
-            if ($news->delete()) {
-                Session::flash('Deleted', 'Slider was Successfully deleted');
-
-                return redirect('admin/sliderslist');
+        $images = 'backend/admin/news/' ;
+        $videos ='backend/admin/news/';
+        if (File::exists($images, $slider->images)) {
+            if(File::exists($videos,$slider->videos)) {
+                //if file exists
+                File::delete($images, $slider->images);
+                File::delete($videos,$slider->videos);
+                //delete this file
+                if ($slider->delete()) {
+                    Session::flash('Deleted', 'Slider was Successfully deleted');
+                    return redirect('admin/sliderslist');
+                }
             }
 
         }
@@ -104,24 +108,37 @@ class SliderController extends Controller
 
     public function SaveSlider(Request $request)
     {
-        $validator = Validator::make($request->all(), ['title' => 'required|min:5|max:120',
-            'file' => 'required|mimetypes:image/jpeg,video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
+        $validator = Validator::make($request->all(), ['images'=>'required|mimetypes:image/jpeg','description'=>'required|min:5|max:2000',
+            'videos' => 'required|mimetypes:video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
 
         if ($validator->fails()) {
             //if fail redirect back with errors and old data
-            return redirect()->back()->withErrors($validator)->withInput();
+//            return redirect()->back()->withErrors($validator)->withInput();
+            return dd($validator->errors());
         } else {
             $input = $request->except('_token');
             $input['created_at'] = Carbon::now();
             $input['updated_at'] = Carbon::now();
             $input['uploader_id'] = Auth::user()->id;
+            //for images
+            $images = Carbon::now()->timestamp . $request->file('images')->getClientOriginalName();
+            $request->file('images')->move(base_path() . '/public/backend/admin/news', $images);
 
-            $file = Carbon::now()->timestamp . $request->file('file')->getClientOriginalName();
-            $request->file('file')->move(base_path() . '/public/backend/admin/news', $file);
-            $input['file'] = $file;
-            $input['slider'] = 'yes';
-            $input['file_type'] = $request->file('file')->getClientMimeType();
-            if (News::create($input)) {
+            $input['images'] = $images;
+            //end for images
+
+            //for videos
+
+            $videos = Carbon::now()->timestamp . $request->file('videos')->getClientOriginalName();
+            $request->file('videos')->move(base_path() . '/public/backend/admin/news', $videos);
+
+            $input['videos'] = $videos;
+            //end for videos
+
+
+            $input['videos_type'] = $request->file('videos')->getClientMimeType();
+
+            if (Sliders::create($input)) {
                 Session::flash('Added', 'Slider was Successfully added');
                 return redirect('admin/sliderslist');
             }

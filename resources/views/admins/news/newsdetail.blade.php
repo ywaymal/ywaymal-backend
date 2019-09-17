@@ -78,7 +78,7 @@
                                     <div class="col-md-4">
 
 
-                                        <form id="delete_form" action="{{ url('admin/deletenews/') }}" method="POST"
+                                        <form id="delete_form" action="{{ url('admin/deletenews/')}}" method="POST"
                                               style="display: none;">
                                             @csrf
                                             <input type="hidden" name="id" value="{{$news->id}}"/>

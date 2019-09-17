@@ -29,35 +29,34 @@
 
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <div class="product-image">
-                                            @if(preg_match('/video/',$news->video_type))
                                                 <video width="320" height="240" controls>
-                                                    <source src="{{url('backend/admin/news/'.$news->file)}}"
-                                                            type="{{$news->video_type}}">
+                                                    <source src="{{url('backend/admin/news/'.$slider->videos)}}"
+                                                            type="{{$slider->videos_type}}">
                                                 </video>
-                                            @else
+                                            <br>
+                                            <br>
+                                            <br>
                                                 <div class="col-md-7 col-sm-7 col-xs-12">
                                                     <div class="product-image">
-                                                        <img src="{{url('backend/admin/news/'.$news->file)}}" alt="...">
+                                                        <img src="{{url('backend/admin/news/'.$slider->images)}}" alt="...">
                                                     </div>
 
                                                 </div>
 
 
-                                            @endif
                                         </div>
 
                                     </div>
 
                                     <div class="col-md-5 col-sm-5 col-xs-12" style="border:0px solid #e5e5e5;">
 
-                                        <h3 class="prod_title">{{$news->title}}</h3>
-
-                                        <p> {{$news->link}}</p>
-                                        <br/>
-
+                                        <h3 class="prod_title">{{$slider->description}}</h3>
 
                                         <br/>
-                                        <p>Created_at: {{$news->created_at}}</p>
+
+
+                                        <br/>
+                                        <p>Created_at: {{$slider->created_at}}</p>
 
                                         <br/>
 
@@ -80,10 +79,10 @@
                                         <form id="delete_form" action="{{ url('admin/deleteslider/') }}" method="POST"
                                               style="display: none;">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{$news->id}}"/>
+                                            <input type="hidden" name="id" value="{{$slider->id}}"/>
                                         </form>
                                         <button onclick="Delete()" type="submit" class="btn btn-danger">Delete</button>
-                                        <a type="submit" href="{{url('admin/slideredit/'.$news->id)}}"
+                                        <a type="submit" href="{{url('admin/slideredit/'.$slider->id)}}"
                                            class="btn btn-success">Edit</a>
 
 
