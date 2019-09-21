@@ -37,41 +37,61 @@ class SliderController extends Controller
     public function SliderEdit($id)
     {
 
-        $sliders = Sliders::where('id', $id)->first();
-        return view('admins.sliders.slideredit', ['sliders' => $sliders]);
+        $slider = Sliders::where('id', $id)->first();
+        return view('admins.sliders.slideredit', ['slider' => $slider]);
     }
 
     public function SliderEditSave(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), ['title' => 'required|min:5|max:120', 'link' => 'min:10|max:2000',
-            'file' => 'mimetypes:image/jpeg,video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
+        $validator = Validator::make($request->all(), ['images'=>'mimetypes:image/jpeg','description'=>'min:5|max:2000',
+            'videos' => 'mimetypes:video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
+
         if ($validator->fails()) {
             //if fail redirect back with errors and old data
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $input = $request->except(['_token', 'file']);
-        $old_data = News::where('id', $id)->first();
-        if ($request->file('file') == null) {
+        $input = $request->except(['_token', 'images','videos']);
+        $old_data = Sliders::where('id', $id)->first();
+        if ($request->file('videos') == null) {
             //if use did not set new video we take this user old video link
-            $input['file'] = $old_data->file;
-            $input['file_type'] = $old_data->file_type;
+            $input['videos'] = $old_data->videos;
+            $input['videos_type'] = $old_data->videos_type;
         } else {
             //if user has new video input
-            if (File::exists('backend/admin/news/', $old_data->file)) {
+            if (File::exists('backend/admin/news/', $old_data->videos)) {
                 //if file exists
-                File::delete('backend/admin/news/', $old_data->file);
+                File::delete('backend/admin/news/', $old_data->videos);
             }
-            $file = Carbon::now()->timestamp . $request->file('file')->getClientOriginalName();//create file name
-            $request->file('file')->move(base_path() . '/public/backend/admin/news', $file);//store video in public folder
-            $input['file'] = $file;
-            $input['file_type'] = $request->file('file')->getClientMimeType();
+            $videos = Carbon::now()->timestamp . $request->file('videos')->getClientOriginalName();//create file name
+            $request->file('videos')->move(base_path() . '/public/backend/admin/news', $videos);//store video in public folder
+            $input['videos'] = $videos;
+            $input['videos_type'] = $request->file('videos')->getClientMimeType();
 
         }
+
+
+
+        if ($request->file('images') == null) {
+            //if use did not set new video we take this user old video link
+            $input['images'] = $old_data->images;
+        } else {
+            //if user has new video input
+            if (File::exists('backend/admin/news/', $old_data->images)) {
+                //if file exists
+                File::delete('backend/admin/news/', $old_data->images);
+            }
+            $images = Carbon::now()->timestamp . $request->file('images')->getClientOriginalName();//create file name
+            $request->file('images')->move(base_path() . '/public/backend/admin/news', $images);//store video in public folder
+            $input['images'] = $images;
+
+        }
+
+
         $input['updated_at'] = Carbon::now();
 
         $input['uploader_id'] = Auth::user()->id;
-        if (News::where('id', $id)->update($input)) {
+        if (Sliders::where('id', $id)->update($input)) {
             Session::flash('Updated', 'Slider was Successfully updated');
             return redirect('admin/sliderdetail/' . $id);
         } else {
@@ -135,9 +155,7 @@ class SliderController extends Controller
             $input['videos'] = $videos;
             //end for videos
 
-
             $input['videos_type'] = $request->file('videos')->getClientMimeType();
-
             if (Sliders::create($input)) {
                 Session::flash('Added', 'Slider was Successfully added');
                 return redirect('admin/sliderslist');

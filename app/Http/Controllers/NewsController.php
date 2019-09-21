@@ -41,7 +41,7 @@ class NewsController extends Controller
 
     public function NewsEditSave(Request $request, $id)
     {
-        $validator = Validator::make($request->all(), ['title' => 'required|min:5|max:120',
+        $validator = Validator::make($request->all(), [
             'file' => 'mimetypes:image/jpeg,video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
         if ($validator->fails()) {
             //if fail redirect back with errors and old data
@@ -64,6 +64,7 @@ class NewsController extends Controller
             $request->file('file')->move(base_path() . '/public/backend/admin/news', $file);//store video in public folder
             $input['file'] = $file;
             $input['file_type'] = $request->file('file')->getClientMimeType();
+            $input['title']='';
 
         }
         $input['updated_at'] = Carbon::now();
@@ -103,7 +104,7 @@ class NewsController extends Controller
 
     public function SaveNews(Request $request)
     {
-        $validator = Validator::make($request->all(), ['title' => 'required|min:5|max:120',
+        $validator = Validator::make($request->all(), [
             'file' => 'required|mimetypes:image/jpeg,video/x-fl,video/mp4,video/x-ms-asf,application/x-mpegURL,video/MP2T,video/3gpp,video/quicktime,video/x-msvideo,video/x-ms-wmv']);
 
         if ($validator->fails()) {
@@ -114,7 +115,7 @@ class NewsController extends Controller
             $input['created_at'] = Carbon::now();
             $input['updated_at'] = Carbon::now();
             $input['uploader_id'] = Auth::user()->id;
-
+            $input['title']='';
             $file = Carbon::now()->timestamp . $request->file('file')->getClientOriginalName();
             $request->file('file')->move(base_path() . '/public/backend/admin/news', $file);
             $input['file'] = $file;
@@ -124,7 +125,6 @@ class NewsController extends Controller
                 Session::flash('Added', 'News was Successfully added');
                 return redirect('admin/newslist');
             }
-
         }
     }
 }

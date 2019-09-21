@@ -26,27 +26,6 @@
                                     </p>
 
                                     <div class="item form-group">
-                                        {!! Form::label('id-input-file-2','Title',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
-
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            {!! Form::text('title',old('title'),['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Title','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
-                                            <br>
-                                            <br>
-                                            @if ($errors->has('title'))
-                                                <strong style="color:indianred;">Something Wrong!</strong>
-                                            @endif
-                                        </div>
-                                    </div>
-
-
-
-
-
-
-
-
-                                    <div class="item form-group">
                                         {!! Form::label('id-input-file-2','News Link',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                         <span class="required">*</span>
 

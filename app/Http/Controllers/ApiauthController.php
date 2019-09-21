@@ -15,13 +15,17 @@ class ApiauthController extends Controller
     //reg for viewers
     public function __construct()
     {
-//        $this->middleware('auth:api',['except'=>['register']]);real
+//        $this->middleware('auth:api',['except'=>['register']]);
     }
 
     public function register(Request $request)
     {
 
-        if(Viewer::where('provider_user_id',$request->userData['provider_user_id'])->count() != 0) {
+        if(Viewer::where('provider_user_id',$request->userData['provider_user_id'])->count() > 0 or Viewer::where('email',$request->userData['email'])->count() > 0 ) {
+             Viewer::where('email',$request->userData['email'])->update([
+                'provider_user_id' => $request->userData['provider_user_id'],
+//           'mobile' => $request->userData['mobile']
+            ]);
             $viewer_from_database = Viewer::where('provider_user_id', $request->userData['provider_user_id'])->first();
 
             $token = $viewer_from_database->createToken('server_access_token')->accessToken;
@@ -95,7 +99,8 @@ class ApiauthController extends Controller
         }else{
 //            $statuse='no';//real
             $statuse='yes';
-       }
+
+        }
         return response()->json($statuse);
     }
 

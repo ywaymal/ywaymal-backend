@@ -14,6 +14,7 @@ class ZeroAuthSettingController extends Controller
 
     public function index()
     {
+
         return view('zeroauthsetting');
     }
 }

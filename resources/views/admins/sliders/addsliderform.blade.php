@@ -27,10 +27,10 @@
 
                                     <div class="item form-group">
                                         {!! Form::label('id-input-file-2','Description',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
-
+                                        <span class="required">*</span>
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            {!! Form::text('description',old('description'),['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Title','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
+                                            {!! Form::textarea('description',null,['rows'=>'5','class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Description','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
                                             <br>
                                             <br>
                                             @if ($errors->has('description'))
@@ -58,9 +58,6 @@
                                             {!!Form::file('videos',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'File Upload','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
                                         </div>
                                     </div>
-
-
-
 
                                     <div class="ln_solid"></div>
                                     <div class="form-group">

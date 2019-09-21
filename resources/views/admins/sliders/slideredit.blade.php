@@ -22,51 +22,43 @@
                         <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="x_panel">
                                 <div class="x_content">
-                                    {!! Form::model($news,array('method'=>'POST','url'=>'admin/slideredit/'.$news->id,'class'=>'form-horizontal form-label-left','enctype'=>"multipart/form-data")) !!}
-
+                                    {!! Form::model($slider,array('method'=>'POST','url'=>'admin/slideredit/'.$slider->id,'class'=>'form-horizontal form-label-left','enctype'=>"multipart/form-data")) !!}
                                     </p>
-
                                     <div class="item form-group">
-                                        {!! Form::label('id-input-file-2','Title',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
-
-                                        </label>
-                                        <div class="col-md-6 col-sm-6 col-xs-12">
-                                            {!! Form::text('title',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Title','data-validate-words'=>"2",'id'=>'form-field-1']) !!}
-                                            <br>
-                                            <br>
-                                            @if ($errors->has('title'))
-                                                <strong style="color:indianred;">Something Wrong!</strong>
-                                            @endif
-                                        </div>
-                                    </div>
-                                    <div class="item form-group">
-                                        {!! Form::label('id-input-file-2','Link',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
+                                        {!! Form::label('id-input-file-2','Description',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                         <span class="required">*</span>
 
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            {!! Form::text('link',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Person Name','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
+                                            {!! Form::textarea('description',null,['rows'=>'5','class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Description','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
                                             <br>
                                             <br>
-                                            @if ($errors->has('link'))
+                                            @if ($errors->has('description'))
                                                 <strong style="color:indianred;">Something Wrong!</strong>
                                             @endif
                                         </div>
                                     </div>
 
-
-
-
                                     <div class="item form-group">
-                                        {!! Form::label('id-input-file-2','File',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
+                                        {!! Form::label('id-input-file-2','Images',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
                                         <span class="required">*</span>
 
                                         </label>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
-                                            {!!Form::file('file',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Description','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
+                                            {!!Form::file('images',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'File Upload','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
                                         </div>
                                     </div>
 
+
+                                    <div class="item form-group">
+                                        {!! Form::label('id-input-file-2','Videos',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
+                                        <span class="required">*</span>
+
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            {!!Form::file('videos',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'File Upload','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
+                                        </div>
+                                    </div>
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
                                         <div class="col-md-6 col-md-offset-3">
@@ -75,7 +67,6 @@
                                         </div>
                                     </div>
                                     {!! Form::close() !!}
-
                                 </div>
                             </div>
                         </div>

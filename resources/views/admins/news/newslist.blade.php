@@ -42,7 +42,7 @@
                                         <tr>
                                             <th>id</th>
                                             <th>Upload By</th>
-                                            <th>Title</th>
+                                            <th>Description</th>
                                             <th> Link</th>
                                             <th>Created At </th>
                                             <th> </th>
@@ -61,7 +61,7 @@
                                                     ?>
                                                     {{$upload_user}}
                                                 </td>
-                                                <td>{{$n->title}}</td>
+                                                <td>{{$n->description}}</td>
                                                 <td>{{$n->link}}</td>
                                                 <td>{{$n->created_at}}</td>
                                                 <td>
