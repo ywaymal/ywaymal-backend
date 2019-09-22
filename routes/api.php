@@ -25,5 +25,7 @@ Route::post('/getsliderdetail/{id}', 'VideosapiController@getsliderdetail');
 Route::post('/getnews', 'VideosapiController@GetNews');
 Route::post('/addvote', 'SocialapiController@addvote');
 Route::post('/deletevote', 'SocialapiController@deletevote');
+Route::post('/addvideocomments', 'SocialapiController@addvideocomments');
+Route::post('/deletevideocomments', 'SocialapiController@deletevideocomments');
 Route::post('/getvideosbyid/{id}', 'VideosapiController@getvideosbyid');
 Route::post('/getnewsdetail/{id}', 'VideosapiController@getnewsdetail');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Like;
+use App\Videocomments;
 use App\Votes;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -53,5 +54,47 @@ class SocialapiController extends Controller
 
 
     }
+    public function addvideocomments(Request $request){
+        if(Videocomments::where([['viewers_id','=',$request->viewers_id],['videos_id','=',$request->videos_id]])->count() < 100){
+            $input = $request->all();
+            $input['created_at'] = Carbon::now();
+            $input['updated_at'] = Carbon::now();
+//           $input['viewers_id']= Auth::guard('api')->id();
+            $input['viewers_id']=1;
+            if(Videocomments::create($input)) {
+                $total_cmd_counts= Videocomments::where('videos_id',$request->videos_id)->count();
 
+                $input['total_cmd_count']=$total_cmd_counts;
+
+                return response()->json($input);
+            }
+        }else{
+            return response()->json('Too many comments');
+        }
+
+    }
+    public function getallcomments(Request $request){
+            $all = Videocomments::where('videos_id',$request->videos_id)->get();
+
+            return response()->json($all);
+
+    }
+    public function deletevideocomments(Request $request){
+        $input = $request->all();
+        if(Videocomments::where([['viewers_id','=',$request->viewers_id],['videos_id','=',$request->videos_id]])->count() == 0){
+            return response()->json('deleted');
+
+        }else{
+            if(Videocomments::where([['viewers_id','=',$request->viewers_id],['videos_id','=',$request->videos_id]])->delete()){
+                $total_cmd_counts= Videocomments::where('videos_id',$request->videos_id)->count();
+                $input['total_cmd_count']=$total_cmd_counts;
+
+
+                return response()->json($input);
+
+            }
+        }
+
+
+    }
 }
