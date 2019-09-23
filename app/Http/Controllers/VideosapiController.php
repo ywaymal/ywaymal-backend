@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Socialviewers;
 use App\Videos;
+use App\Videocomments;
 use App\News;
 use App\Viewer;
 use App\Sliders;
@@ -26,6 +27,7 @@ class VideosapiController extends Controller
         $loop_id=0;
         foreach($videos as $v){
             $videos[$loop_id]['votes']=Votes::where('videos_id',$v->id)->count();
+            $videos[$loop_id]['comments']=Videocomments::where('videos_id',$v->id)->count();
             $loop_id++;
         }
 
@@ -48,7 +50,10 @@ class VideosapiController extends Controller
         return response()->json($slider);
     }
     public function getvideosbyid($id){
+
         $video=Videos::where('id',$id)->first();
+        $video['votes']=Votes::where('videos_id',$id)->count();
+        $video['comments']=Videocomments::where('videos_id',$id)->count();
         return response()->json($video);
 
     }
