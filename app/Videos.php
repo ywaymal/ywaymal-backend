@@ -8,5 +8,5 @@ class Videos extends Model
 {
     //
     protected $table='videos';
-    protected $fillable=['title','video_type','link','description','person','uploader_id','active','city','state'];
+    protected $fillable=['title','image','video_type','link','description','person','uploader_id','active','city','state'];
 }

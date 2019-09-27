@@ -3,7 +3,7 @@
     <div class="container body">
         <div class="main_container">
         @include('layouts.menu')
-       <!-- page content -->
+        <!-- page content -->
             <div class="right_col" role="main">
                 @include('layouts.alert.add_edit_delete')
 
@@ -30,9 +30,16 @@
                                     <div class="col-md-7 col-sm-7 col-xs-12">
                                         <div class="product-image">
                                             <video width="320" height="240" controls>
-                                                <source src="{{url('backend/admin/videos/'.$video->link)}}" type="{{$video->video_type}}">
+                                                <source src="{{url('backend/admin/videos/'.$video->link)}}"
+                                                        type="{{$video->video_type}}">
                                             </video>
                                         </div>
+                                        @if($video->image !== '')
+                                            <div class="product-image">
+                                                <image width="320" height="240"
+                                                       src="{{url('backend/admin/videos/images/'.$video->image)}}"/>
+                                            </div>
+                                        @endif
 
                                     </div>
 
@@ -51,7 +58,7 @@
 
                                         <br/>
                                         <p>Created_at: {{$video->created_at}}</p>
-                                        
+
                                         <br/>
 
                                         <div class="">
@@ -62,7 +69,7 @@
                                                         <p>Active</p>
                                                         <div class="color bg-green"></div>
                                                     </li>
-                                                     </ul>
+                                                </ul>
                                             @else
                                                 <ul class="list-inline prod_color">
                                                     <li>
@@ -75,7 +82,6 @@
                                         <br/>
 
 
-
                                     </div>
                                     <div class="col-md-4">
 
@@ -89,20 +95,22 @@
                                     <div class="col-md-4">
 
 
-                                        <form id="delete_form" action="{{ url('admin/deletevideo/') }}" method="POST" style="display: none;">
+                                        <form id="delete_form" action="{{ url('admin/deletevideo/') }}" method="POST"
+                                              style="display: none;">
                                             @csrf
-                                            <input type="hidden" name="id" value="{{$video->id}}" />
+                                            <input type="hidden" name="id" value="{{$video->id}}"/>
                                         </form>
                                         <button onclick="Delete()" type="submit" class="btn btn-danger">Delete</button>
-                                        <a type="submit" href="{{url('admin/videoedit/'.$video->id)}}" class="btn btn-success">Edit</a>
+                                        <a type="submit" href="{{url('admin/videoedit/'.$video->id)}}"
+                                           class="btn btn-success">Edit</a>
 
 
                                         <script>
-                                          function Delete(){
-                                              if(confirm('Are you sure want to delete this video')){
-                                                  document.getElementById('delete_form').submit();
-                                              }
-                                          }
+                                            function Delete() {
+                                                if (confirm('Are you sure want to delete this video')) {
+                                                    document.getElementById('delete_form').submit();
+                                                }
+                                            }
 
 
                                         </script>

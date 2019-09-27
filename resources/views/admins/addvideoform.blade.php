@@ -135,6 +135,15 @@
                                             {!!Form::file('video',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Description','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
                                         </div>
                                     </div>
+                                    <div class="item form-group">
+                                        {!! Form::label('id-input-file-2','Thumbnail Image',array('class'=>'control-label col-md-3 col-sm-3 col-xs-12')) !!}
+                                        <span class="required">*</span>
+
+                                        </label>
+                                        <div class="col-md-6 col-sm-6 col-xs-12">
+                                            {!!Form::file('image',null,['class'=>'form-control col-md-7 col-xs-12','data-validate-length-range'=>"6",'placeholder'=>'Thumbnail','data-validate-words'=>"2",'id'=>'form-field-1','required'=>'required/']) !!}
+                                        </div>
+                                    </div>
 
                                     <div class="ln_solid"></div>
                                     <div class="form-group">
