@@ -1,145 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b6e14624-e23b-453a-a429-2877cb76b504" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ywaymalbe.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ywaymalbe.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public - Shortcut.lnk" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server.php" beforeDir="false" afterPath="$PROJECT_DIR$/server.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/logs/laravel-2019-09-05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vendor.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/.editorconfig" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/.env.example" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/.gitattributes" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/.styleci.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Console/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Exceptions/Handler.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/ApiauthController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Auth/ForgotPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Auth/RegisterController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Auth/ResetPasswordController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Auth/VerificationController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/Controller.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/HomeController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/NewsController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/SliderController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/SocialapiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/VideosController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/VideosapiController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Controllers/ZeroAuthSettingController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/Authenticate.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/CheckForMaintenanceMode.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/Cors.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/EncryptCookies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/TrimStrings.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/TrustProxies.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Http/Middleware/VerifyCsrfToken.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Like.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/News.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Providers/AppServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Providers/AuthServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Providers/BroadcastServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Providers/EventServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Providers/RouteServiceProvider.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Sliders.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Socialviewers.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/User.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Videos.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/app/Viewer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/artisan" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/bootstrap/app.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/bootstrap/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/factories/UserFactory.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/migrations/2014_10_12_100000_create_password_resets_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/migrations/2019_08_22_161707_create-viewers-table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/database/seeds/DatabaseSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/phpunit.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/components/ExampleComponent.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/components/passport/AuthorizedClients.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/components/passport/Clients.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/js/components/passport/PersonalAccessTokens.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/lang/en/auth.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/lang/en/pagination.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/lang/en/passwords.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/lang/en/validation.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/sass/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/sass/app.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/addvideoform.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/footer.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/header.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/news/addnewsform.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/news/newsdetail.blade.pbp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/news/newsdetail.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/news/newsedit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/news/newslist.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/sliders/addsliderform.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/sliders/sliderdetail.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/sliders/slideredit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/sliders/sliderslist.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/test.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/videodetail.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/videoedit.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/admins/videoslist.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/auth/login.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/auth/passwords/email.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/auth/passwords/reset.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/auth/register.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/auth/verify.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/layouts/admin.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/layouts/alert/add_edit_delete.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/layouts/menu.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/resources/views/zeroauthsetting.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/routes/api.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/routes/channels.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/routes/console.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/routes/web.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/server.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/app/public/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/cache/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/cache/data/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/sessions/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/testing/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/framework/views/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-08-30.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-01.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-02.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-05.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-06.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-09.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-10.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-12.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-14.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-15.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-17.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/storage/logs/laravel-2019-09-18.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/tests/CreatesApplication.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/tests/Feature/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/tests/TestCase.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/tests/Unit/ExampleTest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ywaymalbe/webpack.mix.js" beforeDir="false" />
-    </list>
+    <list default="true" id="b6e14624-e23b-453a-a429-2877cb76b504" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -514,6 +376,7 @@
       <workItem from="1569565043699" duration="275000" />
       <workItem from="1634616875543" duration="939000" />
       <workItem from="1634618313802" duration="1468000" />
+      <workItem from="1634619837532" duration="564000" />
     </task>
     <servers />
   </component>
@@ -557,6 +420,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
